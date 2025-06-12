@@ -1,0 +1,36 @@
+/project-root
+│
+├── /app
+│   ├── /models
+│   │    ├── customer.py
+│   │    ├── order.py
+│   │    ├── product.py
+│   │    ├── order_line.py
+│   │    └── payment.py
+│   │
+│   ├── /services      
+│   │    ├── customer_service.py
+│   │    ├── order_service.py
+│   │    ├── product_service.py
+│   │    ├── payment_service.py
+│   │    └── dashboard_service.py
+│   │
+│   ├── /controllers
+│   │    ├── customer_controller.py
+│   │    ├── order_controller.py
+│   │    ├── product_controller.py
+│   │    ├── payment_controller.py
+│   │    └── dashboard_controller.py
+│   │
+│   ├── /templates
+│   ├── /static
+│   ├── __init__.py
+│   └── routes.py
+│
+├── config.py
+├── run.py
+├── requirements.txt
+├── start.sh
+├── tree.txt
+└── README.md
+
