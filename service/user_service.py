@@ -1,5 +1,3 @@
-# service/user_service.py
-
 from models.user import User
 
 class UserService:

@@ -10,9 +10,15 @@ def create_app():
 
     with app.app_context():
         from models.user import User
+        
+        from models.order import Order
+        from models.product import Product
+        from models.order_line import OrderLine
+        from models.customer import Customer
+        from models.order_status import OrderStatus
+
         db.create_all()
 
-        # ✅ Registrar o blueprint
         from controller.user_controller import user_bp
         app.register_blueprint(user_bp)
 
