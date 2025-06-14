@@ -7,7 +7,7 @@ from zoneinfo import ZoneInfo
 class Order(db.Model):
     __tablename__ = 'Order'
 
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     customer_id = db.Column(db.Integer, db.ForeignKey('Customer.id'), name='CustomerID')
     customer = db.relationship('Customer', backref='orders')
     total_amount = db.Column(Numeric(10, 2), name = 'TotalAmount')
