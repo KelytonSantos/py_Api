@@ -12,5 +12,5 @@ class ProductService:
 
     def create_product(self, nome, price):
         product = Product(name=nome, price=price)
-        self.user_repo.add(product)
+        self.product_repo.add(product)
         return product

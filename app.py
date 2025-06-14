@@ -20,7 +20,12 @@ def create_app():
         db.create_all()
 
         from controller.user_controller import user_bp
+        from controller.product_controller import product_bp
+        from controller.customer_controller import customer_bp
+
         app.register_blueprint(user_bp)
+        app.register_blueprint(product_bp)
+        app.register_blueprint(customer_bp)
 
     return app
 

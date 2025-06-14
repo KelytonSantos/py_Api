@@ -7,7 +7,7 @@ from models.order_status import OrderStatus
 class Product(db.Model):
     __tablename__ = 'Product'
 
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(50), primary_key=True)
     price = db.Column(Numeric(10,2), name='Price')
 

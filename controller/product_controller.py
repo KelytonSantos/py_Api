@@ -11,26 +11,27 @@ product_repo = ProductRepository(db.session)
 service_product = ProductService(product_repo)
 
 
-@product_bp.route('/product/<int:user_id>')
+@product_bp.route('/product/<int:product_id>')
 def get_product(product_id):
     product = service_product.get_product(product_id)
     if not product:
         return jsonify({'error': 'Product not found'}), 404
-    return jsonify({'id': product.id, 'nome': product.name, 'preco': product.price})
+    return jsonify({'id': product.id, 'name': product.name, 'price': product.price})
 
 @product_bp.route('/products')
 def get_all():
     products = service_product.get_all()
     return jsonify([
-        {'id': p.id, 'nome': p.name, 'preco': float(p.price)} for p in products
+        {'id': p.id, 'name': p.name, 'price': float(p.price)} for p in products
     ])
-
 
 @product_bp.route('/product', methods=['POST'])
 def create_product():
     data = request.json
-    nome = data.get('nome')
-    price = data.get('preco')
+    nome = data.get('name')
+    price = data.get('price')
     
-    product = service_product.create_user(nome, price)
-    return jsonify({'id': product.id, 'nome': product.name, 'preco': product.price}), 201
+    print(f'{nome} + {price}')
+
+    product = service_product.create_product(nome, price)
+    return jsonify({'id': product.id, 'name': product.name, 'price': product.price}), 201
